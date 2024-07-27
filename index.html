@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Vuelos y Hoteles</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validarVuelo() {
+            let origen = document.getElementById('origen').value;
+            let destino = document.getElementById('destino').value;
+            let fecha = document.getElementById('fecha_vuelo').value;
+            let plazas = document.getElementById('plazas').value;
+            let precio = document.getElementById('precio_vuelo').value;
+            if (origen === '' || destino === '' || fecha === '' || plazas === '' || precio === '') {
+                alert('Por favor completa todos los campos del vuelo');
+                return false;
+            }
+            return true;
+        }
+
+        function validarHotel() {
+            let nombre = document.getElementById('nombre_hotel').value;
+            let ubicacion = document.getElementById('ubicacion').value;
+            let habitaciones = document.getElementById('habitaciones').value;
+            let tarifa = document.getElementById('tarifa').value;
+            if (nombre === '' || ubicacion === '' || habitaciones === '' || tarifa === '') {
+                alert('Por favor completa todos los campos del hotel');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Gestión de Vuelos y Hoteles</h1>
+
+    <section class="form-section">
+        <h2>Registrar Vuelo</h2>
+        <form action="procesar_vuelo.php" method="post" onsubmit="return validarVuelo()">
+            <label for="origen">Origen:</label>
+            <input type="text" id="origen" name="origen" required>
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" required>
+            <label for="fecha_vuelo">Fecha:</label>
+            <input type="date" id="fecha_vuelo" name="fecha" required>
+            <label for="plazas">Plazas Disponibles:</label>
+            <input type="number" id="plazas" name="plazas_disponibles" required>
+            <label for="precio_vuelo">Precio:</label>
+            <input type="number" step="0.01" id="precio_vuelo" name="precio" required>
+            <input type="submit" value="Registrar Vuelo">
+        </form>
+    </section>
+
+    <section class="form-section">
+        <h2>Registrar Hotel</h2>
+        <form action="procesar_hotel.php" method="post" onsubmit="return validarHotel()">
+            <label for="nombre_hotel">Nombre:</label>
+            <input type="text" id="nombre_hotel" name="nombre" required>
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" required>
+            <label for="habitaciones">Habitaciones Disponibles:</label>
+            <input type="number" id="habitaciones" name="habitaciones_disponibles" required>
+            <label for="tarifa">Tarifa por Noche:</label>
+            <input type="number" step="0.01" id="tarifa" name="tarifa_noche" required>
+            <input type="submit" value="Registrar Hotel">
+        </form>
+    </section>
+</div>
+</body>
+</html>
