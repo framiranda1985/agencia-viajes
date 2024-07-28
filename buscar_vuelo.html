@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Vuelos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Buscar Vuelos</h1>
+
+    <section class="form-section">
+        <h2>Búsqueda de Vuelos</h2>
+        <form action="buscar_vuelo.php" method="post">
+            <label for="origen_busqueda">Origen:</label>
+            <input type="text" id="origen_busqueda" name="origen" required>
+            <label for="destino_busqueda">Destino:</label>
+            <input type="text" id="destino_busqueda" name="destino" required>
+            <label for="fecha_busqueda">Fecha:</label>
+            <input type="date" id="fecha_busqueda" name="fecha">
+            <input type="submit" value="Buscar Vuelo">
+        </form>
+    </section>
+</div>
+</body>
+</html>
